@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text" default-locale="tr-TR" demote-non-dropping-particle="sort-only" page-range-format="expanded" initialize-with=".">
+  <info>
+    <title>APA 7th edition (Turkish - ve ark.)</title>
+    <id>http://www.zotero.org/styles/apa-7th-edition-turkish-ve-ark</id>
+    <link href="http://www.zotero.org/styles/apa-7th-edition" rel="template"/>
+    <author>
+      <name>OpenAI Custom</name>
+    </author>
+    <category citation-format="author-date"/>
+    <category field="psychology"/>
+    <summary>APA 7 style adapted to use "ve ark." instead of "et al." for Turkish theses.</summary>
+    <updated>2025-07-14T00:00:00+00:00</updated>
+  </info>
+
+  <locale xml:lang="tr">
+    <terms>
+      <term name="et-al">ve ark.</term>
+    </terms>
+  </locale>
+
+  <macro name="author">
+    <names variable="author">
+      <name and="symbol" initialize-with="." delimiter=", "/>
+      <et-al term="et-al"/>
+      <label form="short" prefix=" " text-case="lowercase" suffix="."/>
+      <substitute>
+        <names variable="editor"/>
+        <text variable="title"/>
+      </substitute>
+    </names>
+  </macro>
+
+  <citation collapse="year" et-al-min="3" et-al-use-first="1" disambiguate-add-names="true">
+    <sort>
+      <key variable="author"/>
+      <key variable="issued"/>
+    </sort>
+    <layout prefix="(" suffix=")" delimiter="; ">
+      <group delimiter=", ">
+        <text macro="author"/>
+        <date variable="issued">
+          <date-part name="year"/>
+        </date>
+      </group>
+    </layout>
+  </citation>
+
+  <bibliography et-al-min="21" et-al-use-first="20" hanging-indent="true" line-spacing="2" entry-spacing="0">
+    <sort>
+      <key variable="author"/>
+      <key variable="issued"/>
+    </sort>
+    <layout>
+      <text macro="author"/>
+      <date variable="issued" prefix=" (" suffix=").">
+        <date-part name="year"/>
+      </date>
+      <text variable="title" prefix=" " suffix="."/>
+      <text variable="container-title" font-style="italic" prefix=" " suffix=","/>
+      <group delimiter=", ">
+        <text variable="volume"/>
+        <text variable="page"/>
+      </group>
+      <text variable="DOI" prefix=". https://doi.org/"/>
+    </layout>
+  </bibliography>
+</style>
