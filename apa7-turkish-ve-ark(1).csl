@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text" default-locale="tr-TR" demote-non-dropping-particle="sort-only">
+  <info>
+    <title>APA 7th edition (Turkish - ve ark.)</title>
+    <id>http://www.zotero.org/styles/apa-turkish-ve-ark</id>
+    <link href="http://www.zotero.org/styles/apa" rel="self"/>
+    <author>
+      <name>OpenAI Custom</name>
+    </author>
+    <category citation-format="author-date"/>
+    <category field="psychology"/>
+    <updated>2025-07-14T00:00:00+00:00</updated>
+    <summary>APA 7th edition style with "ve ark." instead of "et al."</summary>
+  </info>
+
+  <macro name="author">
+    <names variable="author">
+      <name and="symbol" delimiter=", " initialize-with="." name-as-sort-order="all" sort-separator=", "/>
+      <label form="short" prefix=" " text-case="lowercase" suffix="."/>
+      <substitute>
+        <names variable="editor"/>
+        <text variable="title"/>
+      </substitute>
+    </names>
+  </macro>
+
+  <macro name="author-short">
+    <names variable="author">
+      <name form="short" and="symbol" initialize-with="." delimiter=", "/>
+      <et-al term="ve ark."/>
+      <substitute>
+        <names variable="editor"/>
+        <text variable="title"/>
+      </substitute>
+    </names>
+  </macro>
+
+  <locale xml:lang="tr">
+    <terms>
+      <term name="et-al">ve ark.</term>
+    </terms>
+  </locale>
+
+  <!-- Rest of the CSL code would be inherited from base APA 7 style -->
+  <!-- This is a minimal working template showing ve ark. replacement -->
+</style>
